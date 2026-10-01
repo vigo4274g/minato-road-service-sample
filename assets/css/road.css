@@ -103,3 +103,9 @@
   .rs .feat p{ font-size:16px; }
   .rs .dial--2{ margin-top:60px; }
 }
+
+/* ロードサービスページに置いた料金ブロック（白地にして読みやすく） */
+.rs__fee{ margin-top:40px; background:#fff; padding:36px; border:1px solid rgba(7,59,154,.25); font-family:"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro",sans-serif; font-size:14px; letter-spacing:.02em; line-height:1.8; color:#222; }
+.rs__fee .fee__q{ font-family:inherit; }
+.rs__fee strong{ font-weight:700; }
+@media (max-width:991px){ .rs__fee{ padding:18px; margin-top:28px; } }

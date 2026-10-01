@@ -87,10 +87,10 @@ main{ background:var(--paper); }
 .mv__scroll{ position:absolute; left:50%; bottom:40px; transform:translateX(-50%); color:#fff; font-size:10px; letter-spacing:.2em; }
 
 /* ---- 見出し枠（上下1px #1263ce・27px太字） ---- */
-.ttl{ padding:60px 0; }
-.ttl__box{ border-top:1px solid var(--blue); border-bottom:1px solid var(--blue); padding:20px; text-align:center; }
+.ttl{ padding:44px 0 36px; }
+.ttl__box{ border-top:1px solid var(--blue); border-bottom:1px solid var(--blue); padding:14px; text-align:center; }
 .ttl__box span{ font-size:27px; font-weight:700; line-height:1.8; }
-.ttl--tight{ padding:60px 0 30px; }
+.ttl--tight{ padding:44px 0 26px; }
 
 /* ---- 写真＋文章（写真720px・全幅寄せ） ---- */
 .imgtxt{ padding:0 0 60px; }
@@ -118,17 +118,17 @@ main{ background:var(--paper); }
 .band span{ font-size:27px; font-weight:700; color:#fff; line-height:1.8; }
 
 /* ---- 会社情報カード ---- */
-.cards{ background:#fff; padding:30px 0 60px; }
+.cards{ background:#fff; padding:26px 0 48px; }
 .cards__in{ display:flex; gap:46px; }
 .card{ width:50%; background:var(--dark); color:#fff; }
-.card .ph{ height:343px; }
+.card .ph{ height:250px; }
 .card__bd{ padding:10px 20px 20px; }
 .card__bd h3{ font-size:20px; font-weight:700; text-align:center; line-height:1.8; margin-bottom:10px; }
 .card__bd p{ font-size:16px; line-height:1.8; margin-bottom:10px; }
 .card__bd .btn01{ display:block; text-align:center; }
 
 /* ---- 新着情報 ---- */
-.news{ padding:60px 0 100px; }
+.news{ padding:40px 0 60px; }
 .news__box{ max-width:1200px; margin:0 auto; background:#fff; border:1px solid #333; }
 .news ul{ width:400px; margin:0 auto; padding-top:1px; }
 .news li a{ display:flex; padding:10px 0; font-size:14px; color:#222; }
@@ -138,7 +138,7 @@ main{ background:var(--paper); }
 .news__btn a{ display:inline-block; width:200px; background:var(--dark); color:#fff; font-size:15px; padding:10px; line-height:1.5; }
 
 /* ---- バナー3枚（Instagram / TikTok / 公式LINE） ---- */
-.bnr{ padding:60px 0; }
+.bnr{ padding:48px 0; }
 .bnr__in{ display:flex; gap:40px; }
 .bnr a{ width:354px; height:154px; position:relative; display:block; overflow:hidden; background:#2b2f36; }
 .bnr a{ background-size:cover; background-position:center; }
@@ -327,7 +327,7 @@ main{ background:var(--paper); }
 .area__list{ display:flex; flex-wrap:wrap; gap:8px 10px; }
 .area__list li{ font-size:14px; background:#fff; border:1px solid #ddd; padding:7px 15px; line-height:1.5; }
 .area__list li.main{ background:var(--dark); color:#fff; border-color:var(--dark); font-weight:700; }
-.area__map{ width:54%; }
+.area__map{ width:54%; max-width:500px; margin-left:auto; }
 .area__map img{ width:100%; border:1px solid #ddd; }
 
 /* ---- ご依頼の流れ ---- */
@@ -369,7 +369,7 @@ main{ background:var(--paper); }
 
 /* ---- 汎用余白 ---- */
 .pb60{ padding-bottom:60px; } .pt0{ padding-top:0; }
-.sec{ padding:60px 0; } .sec--w{ background:#fff; }
+.sec{ padding:48px 0; } .sec--w{ background:#fff; }
 .lead-c{ text-align:center; font-size:15px; line-height:2; color:#555; margin-bottom:36px; }
 
 /* ============================================================
@@ -472,4 +472,36 @@ main{ background:var(--paper); }
   .fee__plus{ justify-content:center; padding:4px 0; }
   .fee__promise{ padding:20px; } .fee__promise li{ font-size:14px; }
   .fee__case{ padding:18px; }
+}
+
+/* トップの料金＝要点だけ（詳細はロードサービスページ） */
+.fee2{ border:1px solid #ddd; background:#fff; }
+.fee2__row{ display:flex; gap:22px; padding:22px 26px; align-items:flex-start; }
+.fee2__row+.fee2__row{ border-top:1px solid #e3e3e3; }
+.fee2__tag{ flex:none; width:168px; text-align:center; font-size:13px; font-weight:700; padding:9px 6px; line-height:1.5; color:#fff; }
+.fee2__tag--a{ background:#06c755; } .fee2__tag--b{ background:var(--dark); } .fee2__tag--c{ background:var(--blue); }
+.fee2__row p{ font-size:14.5px; line-height:1.95; color:#333; }
+.fee2__price{ font-size:30px; font-weight:700; color:var(--red); line-height:1.2; letter-spacing:.01em; }
+.fee2__unit{ font-size:14px; color:#555; margin-left:8px; }
+.fee2__note{ margin-top:18px; font-size:13.5px; line-height:1.9; color:#444; border-left:3px solid var(--red); padding:12px 16px; background:#fff; }
+@media (max-width:960px){
+  .fee2__row{ display:block; padding:18px; }
+  .fee2__tag{ display:inline-block; width:auto; padding:6px 14px; margin-bottom:10px; }
+  .fee2__price{ font-size:26px; display:block; }
+  .fee2__unit{ margin-left:0; display:block; }
+}
+
+/* 凝縮版：対応トラブルの一覧 */
+.tlist--grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; justify-content:initial; }
+.tlist--grid li{ text-align:center; padding:13px 8px; font-size:14px; background:#fff; border:1px solid #ddd; line-height:1.5; }
+/* 凝縮版：選ばれる理由3つ（写真なし） */
+.r3{ display:flex; gap:26px; }
+.r3__item{ width:33.333%; background:#fff; border:1px solid #ddd; border-top:3px solid var(--blue); padding:26px 24px; }
+.r3__no{ display:block; font-family:Oswald,sans-serif; font-size:13px; letter-spacing:.2em; color:var(--blue); font-weight:700; margin-bottom:10px; }
+.r3__item h3{ font-size:17px; font-weight:700; line-height:1.6; margin-bottom:10px; }
+.r3__item p{ font-size:14px; line-height:1.9; color:#555; }
+@media (max-width:960px){
+  .tlist--grid{ grid-template-columns:repeat(2,1fr); gap:8px; }
+  .tlist--grid li{ font-size:13px; padding:11px 6px; }
+  .r3{ display:block; } .r3__item{ width:100%; } .r3__item+.r3__item{ margin-top:14px; }
 }
