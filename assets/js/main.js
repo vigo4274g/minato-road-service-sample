@@ -2,6 +2,12 @@
   'use strict';
   var hd=document.querySelector('.hd'), bg=document.querySelector('.burger');
   if(hd&&bg){ bg.addEventListener('click',function(){ hd.classList.toggle('open'); }); }
+  // スクロールでヘッダーを縮める（固定ヘッダー）
+  if(hd){
+    var onScroll=function(){ hd.classList.toggle('is-stuck', (window.scrollY||window.pageYOffset) > 40); };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
   var dots=document.querySelectorAll('.mv__dots li');
   Array.prototype.forEach.call(dots,function(d){ d.addEventListener('click',function(){
     Array.prototype.forEach.call(dots,function(x){x.classList.remove('current')}); d.classList.add('current'); }); });
