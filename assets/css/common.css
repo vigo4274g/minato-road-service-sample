@@ -529,3 +529,31 @@ main{ background:var(--paper); }
   .tlist--grid li{ font-size:13px; padding:11px 6px; }
   .r3{ display:block; } .r3__item{ width:100%; } .r3__item+.r3__item{ margin-top:14px; }
 }
+
+/* 対応できる車両（並び順で誰向けかを伝える） */
+.cars{ background:var(--dark); color:#fff; padding:20px 0; }
+.cars__in{ display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:center; }
+.cars__lb{ font-size:13px; font-weight:700; letter-spacing:.1em; color:#fff; border-right:1px solid rgba(255,255,255,.35); padding-right:24px; flex:none; }
+.cars__list{ display:flex; flex-wrap:wrap; gap:8px 10px; }
+.cars__list li{ font-size:13.5px; padding:6px 14px; border:1px solid rgba(255,255,255,.4); line-height:1.5; }
+.cars__list li:nth-child(-n+4){ background:#fff; color:var(--dark); border-color:#fff; font-weight:700; }
+/* 何度もご依頼いただく場合 */
+.rep{ display:flex; gap:36px; align-items:stretch; background:#fff; border:1px solid #ddd; }
+.rep__tx{ width:60%; padding:30px 32px; }
+.rep__tx h3{ font-size:21px; font-weight:700; margin-bottom:12px; }
+.rep__tx p{ font-size:14.5px; line-height:1.95; color:#333; }
+.rep__list{ margin:16px 0 14px; }
+.rep__list li{ font-size:14px; line-height:1.8; padding-left:24px; position:relative; margin-bottom:7px; }
+.rep__list li::before{ content:""; position:absolute; left:0; top:7px; width:13px; height:7px; border-left:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(-45deg); }
+.rep__note{ font-size:12.5px; color:#777; }
+.rep__ph{ width:40%; min-height:280px; }
+@media (max-width:960px){
+  .cars{ padding:16px 0; }
+  .cars__in{ gap:12px; }
+  .cars__lb{ border-right:0; padding-right:0; width:100%; text-align:center; }
+  .cars__list{ justify-content:center; gap:6px 8px; }
+  .cars__list li{ font-size:12.5px; padding:5px 11px; }
+  .rep{ display:block; }
+  .rep__tx{ width:100%; padding:22px 18px; }
+  .rep__ph{ width:100%; min-height:0; height:0; padding-top:56%; }
+}
