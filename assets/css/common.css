@@ -278,15 +278,16 @@ main{ background:var(--paper); }
 .bread li+li::before{ content:"›"; margin-right:10px; }
 
 /* ---- 緊急CTA帯（トップの広告の核） ---- */
-.urg{ background:var(--red); color:#fff; padding:26px 0; }
-.urg__in{ max-width:1260px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap; }
-.urg__tx b{ display:block; font-size:19px; font-weight:700; line-height:1.6; }
-.urg__tx span{ display:block; font-size:13px; opacity:.9; }
-.urg__tel{ display:flex; align-items:center; gap:8px; color:#fff; font-size:34px; font-weight:700; line-height:1; letter-spacing:.02em; }
-.urg__tel svg{ width:30px; height:30px; fill:#fff; }
-.urg__tel i{ display:block; font-style:normal; font-size:12px; font-weight:400; padding-top:4px; }
-.urg__line{ display:inline-flex; align-items:center; gap:8px; background:#06c755; color:#fff; font-size:15px; font-weight:700; padding:13px 22px; border-radius:4px; }
-.urg__line svg{ width:20px; height:20px; fill:#fff; }
+.urg{ background:var(--red); color:#fff; padding:38px 0; }
+.urg__in{ max-width:1340px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap; }
+.urg__tx b{ display:block; font-size:23px; font-weight:700; line-height:1.55; }
+.urg__tx span{ display:block; font-size:14.5px; opacity:.92; margin-top:2px; }
+.urg__tel{ display:flex; align-items:center; gap:11px; color:#fff; font-size:46px; font-weight:700; line-height:1; letter-spacing:.01em; transition:.2s; }
+.urg__tel:hover{ opacity:.85; }
+.urg__tel svg{ width:38px; height:38px; fill:#fff; flex:none; }
+.urg__tel i{ display:block; font-style:normal; font-size:14px; font-weight:400; padding-top:6px; letter-spacing:.04em; }
+.urg__line{ display:inline-flex; align-items:center; gap:10px; background:#06c755; color:#fff; font-size:18px; font-weight:700; padding:18px 30px; border-radius:4px; }
+.urg__line svg{ width:24px; height:24px; fill:#fff; flex:none; }
 .urg__line:hover{ opacity:.88; }
 
 /* ---- トラブル4枚カード ---- */
@@ -375,6 +376,27 @@ main{ background:var(--paper); }
 /* ============================================================
    追加パーツのレスポンシブ
    ============================================================ */
+
+/* 緊急帯：画面幅に応じて段階的に縮める（折り返さない範囲で最大に） */
+@media (max-width:1380px){
+  .urg__tel{ font-size:40px; } .urg__tel svg{ width:34px; height:34px; }
+  .urg__tx b{ font-size:21px; } .urg__line{ font-size:17px; padding:16px 26px; }
+  .urg__in{ gap:22px; }
+}
+@media (max-width:1180px){
+  .urg__tel{ font-size:34px; } .urg__tel svg{ width:29px; height:29px; }
+  .urg__tel i{ font-size:12.5px; padding-top:4px; }
+  .urg__tx b{ font-size:18px; } .urg__tx span{ font-size:13px; }
+  .urg__line{ font-size:15px; padding:13px 20px; } .urg__line svg{ width:20px; height:20px; }
+  .urg__in{ gap:18px; } .urg{ padding:30px 0; }
+}
+@media (max-width:1060px){
+  .urg__tel{ font-size:30px; } .urg__tel svg{ width:25px; height:25px; }
+  .urg__tel i{ font-size:11.5px; padding-top:3px; }
+  .urg__tx b{ font-size:16.5px; } .urg__tx span{ font-size:12px; }
+  .urg__line{ font-size:14px; padding:11px 17px; } .urg__line svg{ width:18px; height:18px; }
+  .urg__in{ gap:14px; } .urg{ padding:26px 0; }
+}
 @media (max-width:1280px){
   .hd__r{ gap:14px; }
   .hd__btn{ display:none; }   /* 緊急時は電話とLINEを優先。問い合わせはナビにある */
@@ -390,11 +412,13 @@ main{ background:var(--paper); }
   .hd--solid{ background:rgba(11,16,24,.92); }
   .subhd h1{ font-size:23px; }
   .bread ul{ padding:10px 20px; font-size:11px; }
-  .urg{ padding:22px 0; }
+  .urg{ padding:26px 0; }
   .urg__in{ flex-direction:column; gap:16px; padding:0 20px; }
   .urg__tx{ text-align:center; }
-  .urg__tx b{ font-size:18px; }
-  .urg__tel{ font-size:31px; }
+  .urg__tx b{ font-size:19px; }
+  .urg__tel{ font-size:38px; gap:9px; }
+  .urg__tel svg{ width:30px; height:30px; }
+  .urg__line{ font-size:17px; padding:16px 28px; }
   .tcards{ flex-wrap:wrap; gap:20px; }
   .tcard{ width:calc(50% - 10px); }
   .tcard .ph{ height:0; padding-top:66.7%; }
