@@ -547,6 +547,18 @@ main{ background:var(--paper); }
 .rep__list li::before{ content:""; position:absolute; left:0; top:7px; width:13px; height:7px; border-left:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(-45deg); }
 .rep__note{ font-size:12.5px; color:#777; }
 .rep__ph{ width:40%; min-height:280px; }
+/* 代車（軽貨物車）のご用意 */
+.lend{ background:#fff; border:1px solid #ddd; }
+.lend__hd{ background:var(--dark2); color:#fff; padding:20px 32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.lend__lb{ flex:none; font-size:12.5px; font-weight:700; letter-spacing:.12em; background:var(--blue); color:#fff; padding:6px 14px; }
+.lend__hd h3{ font-size:23px; font-weight:700; line-height:1.5; }
+.lend__bd{ padding:28px 32px 24px; }
+.lend__bd p{ font-size:14.5px; line-height:1.95; color:#333; }
+.lend__list{ margin:18px 0 14px; }
+.lend__list li{ font-size:14.5px; line-height:1.8; padding-left:24px; position:relative; margin-bottom:8px; }
+.lend__list li::before{ content:""; position:absolute; left:0; top:7px; width:13px; height:7px; border-left:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(-45deg); }
+.lend__note{ font-size:12.5px; line-height:1.85; color:#777; }
+
 @media (max-width:960px){
   .cars{ padding:16px 0; }
   .cars__in{ gap:12px; }
@@ -556,4 +568,9 @@ main{ background:var(--paper); }
   .rep{ display:block; }
   .rep__tx{ width:100%; padding:22px 18px; }
   .rep__ph{ width:100%; min-height:0; height:0; padding-top:56%; }
+  .lend__hd{ padding:18px; gap:12px; }
+  .lend__hd h3{ font-size:19px; }
+  .lend__bd{ padding:20px 18px 18px; }
+  .lend__bd p{ font-size:14px; }
+  .lend__list li{ font-size:14px; }
 }

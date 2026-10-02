@@ -104,6 +104,19 @@
   .rs .dial--2{ margin-top:60px; }
 }
 
+/* 代車（軽貨物車）のご用意 */
+.rs .lendbox{ margin-top:40px; background:#fff; border:1px solid var(--rsblue); padding:40px 48px; }
+.rs .lendbox h4{ font-size:28.8px; font-weight:700; line-height:1.5; margin-bottom:20px; }
+.rs .lendbox p{ margin:0; }
+.rs .lendbox .dash{ margin-top:24px; }
+.rs .lendbox strong{ font-weight:700; background:linear-gradient(transparent 62%, var(--marker) 62%); }
+.rs .lendbox small{ display:block; margin-top:20px; font-size:16px; line-height:1.7; }
+@media (max-width:991px){
+  .rs .lendbox{ padding:24px; margin-top:32px; }
+  .rs .lendbox h4{ font-size:21px; margin-bottom:14px; }
+  .rs .lendbox small{ font-size:14px; }
+}
+
 /* ロードサービスページに置いた料金ブロック（白地にして読みやすく） */
 .rs__fee{ margin-top:40px; background:#fff; padding:36px; border:1px solid rgba(7,59,154,.25); font-family:"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro",sans-serif; font-size:14px; letter-spacing:.02em; line-height:1.8; color:#222; }
 .rs__fee .fee__q{ font-family:inherit; }
