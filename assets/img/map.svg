@@ -10,5 +10,5 @@
 <path d="M251 262h60" stroke="#1a6fd0" stroke-width="1.5"/><text x="314" y="266" font-size="13" font-weight="700" fill="#111">ミナトロードサービス</text>
 <rect x="20" y="20" width="230" height="52" rx="3" fill="#e9f2fb" stroke="#1a6fd0"/><text x="32" y="40" font-size="10" fill="#1a6fd0" font-weight="700">SOS</text><text x="32" y="60" font-size="14" font-weight="700" fill="#0b2a5e">ロードサービス 出動エリア</text>
 <rect x="60" y="392" width="88" height="24" rx="3" fill="#0b2a5e"/><text x="70" y="409" font-size="12" font-weight="700" fill="#fff">出動エリア</text>
-<text x="60" y="436" font-size="11.5" fill="#111">広島市内全域・東広島市・呉市・廿日市市</text><text x="60" y="452" font-size="11.5" fill="#111">及び その他周辺地域</text>
+<text x="60" y="436" font-size="11.5" fill="#111">広島市内全域・東広島市・呉市・廿日市市・福山市</text><text x="60" y="452" font-size="11.5" fill="#111">及び その他周辺地域</text>
 </svg>
