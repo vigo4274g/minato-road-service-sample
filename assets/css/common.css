@@ -507,6 +507,31 @@ main{ background:var(--paper); }
 }
 
 /* トップの料金＝要点だけ（詳細はロードサービスページ） */
+/* ---- 強み（POINT 01〜04） ---- */
+.pts{ display:flex; flex-wrap:wrap; gap:26px; }
+.pt{ width:calc(50% - 13px); background:#fff; border:1px solid #e0e0e0; border-top:4px solid var(--red); padding:26px 30px 24px; }
+.pt--sub{ border-top-color:var(--blue); }
+.pt__no{ font-family:Oswald,sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.2em; color:var(--red); line-height:1; }
+.pt__no b{ font-size:26px; letter-spacing:.04em; margin-left:3px; }
+.pt--sub .pt__no{ color:var(--blue); }
+.pt__ti{ font-size:25px; font-weight:700; line-height:1.4; margin-top:10px; letter-spacing:.01em; }
+.pt__ti em{ font-style:normal; color:var(--red); }
+.pt--sub .pt__ti em{ color:var(--blue); }
+.pt__tx{ font-size:14.5px; line-height:1.95; color:#333; margin-top:12px; }
+.pt__list{ margin-top:14px; border-top:1px dashed #ddd; padding-top:14px; }
+.pt__list li{ font-size:13.5px; line-height:1.75; color:#555; padding-left:22px; position:relative; margin-bottom:6px; }
+.pt__list li::before{ content:""; position:absolute; left:0; top:6px; width:12px; height:6px;
+  border-left:2px solid var(--red); border-bottom:2px solid var(--red); transform:rotate(-45deg); }
+.pt--sub .pt__list li::before{ border-color:var(--blue); }
+@media (max-width:1060px){
+  .pts{ gap:20px; } .pt{ width:calc(50% - 10px); padding:22px 22px 20px; }
+  .pt__ti{ font-size:21px; } .pt__tx{ font-size:14px; }
+}
+@media (max-width:760px){
+  .pts{ display:block; } .pt{ width:100%; } .pt+.pt{ margin-top:18px; }
+  .pt__ti{ font-size:20px; } .pt__list li{ font-size:13px; }
+}
+
 /* ---- 料金カード（参考画像1枚目の型） ---- */
 .pcards{ display:flex; gap:26px; margin-top:30px; }
 .pcard{ width:25%; background:#fff; border:1px solid #e0e0e0; padding:30px 16px 24px; position:relative; text-align:center; }
