@@ -65,17 +65,17 @@ main{ background:var(--paper); }
 @media (prefers-reduced-motion: reduce){ .hd,.hd__in,.logo,.logo__em,.logo__tx,.tel,.nav a,.hd__line,.hd__btn{ transition:none; } }
 
 /* ---- メインビジュアル（1440×900 の写真スライド。文字は写真に焼き込みなので再現） ---- */
-.mv{ position:relative; width:100%; height:62.5vw; max-height:900px; overflow:hidden; background:#000; }
+.mv{ position:relative; width:100%; height:44vw; max-height:640px; min-height:400px; overflow:hidden; background:#000; }
 .mv__slide{ position:absolute; inset:0; }
 .mv__img{ position:absolute; inset:0; background:linear-gradient(120deg,#2c3540 0%,#5a6b7c 45%,#8fa3b5 100%) center/cover no-repeat; }
 .mv__img[style]::after,.mv__img[style]::before{ display:none; }
 .mv__img::before{ content:""; position:absolute; right:0; top:0; bottom:0; width:58%; background:radial-gradient(ellipse at 70% 60%, rgba(255,255,255,.18), transparent 60%); }
-.mv__img::after{ content:"メイン写真（レッカー車＋広島の風景など・横1920×1200）"; position:absolute; right:24px; bottom:60px; font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.05em; }
+.mv__img::after{ content:"メイン写真（レッカー車＋広島の風景など・横1920×1200）"; position:absolute; right:24px; bottom:46px; font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.05em; }
 .mv__panel{ position:absolute; left:0; top:0; bottom:0; width:56%; background:rgba(20,24,30,.78); clip-path:polygon(0 0,100% 0,72% 100%,0 100%); }
-.mv__tx{ position:absolute; left:3.5%; top:22%; color:#fff; font-family:"游明朝","Yu Mincho","ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif; text-shadow:0 2px 12px rgba(0,0,0,.4); }
-.mv__tx h2{ font-size:4.6vw; line-height:1.35; font-weight:500; letter-spacing:.06em; }
-.mv__tx p.jp{ font-size:clamp(14px,2.1vw,30px); margin-top:1.2vw; letter-spacing:.08em; font-weight:400; }
-.mv__tx p.en{ font-size:clamp(12px,1.35vw,19px); margin-top:1.2vw; font-family:"Times New Roman",serif; letter-spacing:.02em; line-height:1.5; }
+.mv__tx{ position:absolute; left:3.5%; top:200px; color:#fff; font-family:"游明朝","Yu Mincho","ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif; text-shadow:0 2px 12px rgba(0,0,0,.4); }
+.mv__tx h2{ font-size:clamp(30px,3.7vw,54px); line-height:1.35; font-weight:500; letter-spacing:.06em; }
+.mv__tx p.jp{ font-size:clamp(14px,1.75vw,25px); margin-top:14px; letter-spacing:.08em; font-weight:400; }
+.mv__tx p.en{ font-size:clamp(12px,1.2vw,17px); margin-top:12px; font-family:"Times New Roman",serif; letter-spacing:.02em; line-height:1.5; }
 .mv__arrow{ position:absolute; top:calc(50% - 25px); width:50px; height:50px; cursor:pointer; }
 .mv__arrow::before{ content:""; position:absolute; top:17px; width:14px; height:14px; border-top:2px solid #fff; border-left:2px solid #fff; }
 .mv__arrow.prev{ left:0; } .mv__arrow.prev::before{ left:20px; transform:rotate(-45deg); }
@@ -218,9 +218,10 @@ main{ background:var(--paper); }
   .hd.open .nav a{ text-align:left; padding:16px 4px; line-height:1.7; border-bottom:1px solid rgba(255,255,255,.18); }
   .hd.open .nav li.current a::before{ display:none; }
 
-  .mv{ height:62.5vw; }
+  .mv{ height:62.5vw; max-height:none; min-height:0; }
   .mv__panel{ width:70%; }
   .mv__tx{ top:14%; }
+  .mv__tx h2{ font-size:5.6vw; }
   .mv__tx h2{ font-size:5.6vw; } .mv__tx p.jp{ font-size:clamp(14px,3.4vw,22px); } .mv__tx p.en{ font-size:12px; }
   .mv__img::after{ font-size:11px; bottom:26px; right:8px; }
   .mv__scroll{ display:none; } .mv__arrow{ display:none; }
@@ -546,11 +547,11 @@ main{ background:var(--paper); }
 }
 
 /* ---- 料金カード（参考画像1枚目の型） ---- */
-.pcards{ display:flex; gap:26px; margin-top:30px; }
-.pcard{ width:25%; background:#fff; border:1px solid #e0e0e0; padding:30px 16px 24px; position:relative; text-align:center; }
+.pcards{ display:flex; gap:30px; margin-top:34px; justify-content:center; }
+.pcard{ width:360px; background:#fff; border:1px solid #e0e0e0; padding:30px 16px 24px; position:relative; text-align:center; }
 .pcard__pill{ position:absolute; top:-19px; left:50%; transform:translateX(-50%); white-space:nowrap;
   background:#fff; border:3px solid var(--red); color:var(--red); font-size:16px; font-weight:700; padding:7px 18px; border-radius:300px; }
-.pcard__ph{ height:168px; }
+.pcard__ph{ height:210px; }
 .pcard__price{ margin-top:24px; color:var(--red); font-weight:700; line-height:1; display:flex; align-items:baseline; justify-content:center; }
 .pcard__price b{ font-size:46px; letter-spacing:-.01em; }
 .pcard__price small{ position:absolute; left:0; top:-15px; font-size:12px; white-space:nowrap; }
@@ -558,19 +559,18 @@ main{ background:var(--paper); }
 .pcard__cap{ font-size:14.5px; color:#555; line-height:1.7; margin-top:10px; }
 .pcards__note{ font-size:14.5px; color:#555; line-height:1.9; margin-top:26px; text-align:center; }
 @media (max-width:1100px){
-  .pcards{ gap:18px; } .pcard{ padding:28px 10px 20px; } .pcard__pill{ font-size:14px; padding:6px 13px; }
-  .pcard__ph{ height:132px; } .pcard__price b{ font-size:36px; } .pcard__price i{ font-size:20px; }
+  .pcards{ gap:20px; } .pcard{ width:calc(50% - 10px); padding:28px 14px 20px; } .pcard__pill{ font-size:14px; padding:6px 13px; }
+  .pcard__ph{ height:170px; } .pcard__price b{ font-size:36px; } .pcard__price i{ font-size:20px; }
   .pcard__cap{ font-size:13px; }
 }
 @media (max-width:860px){
   .pcards{ flex-wrap:wrap; gap:34px 20px; margin-top:34px; }
-  .pcard{ width:calc(50% - 10px); }
   .pcard__ph{ height:150px; }
 }
 @media (max-width:560px){
   .pcards{ gap:32px 12px; } .pcard{ width:calc(50% - 6px); padding:26px 8px 18px; }
   .pcard__pill{ font-size:12.5px; padding:5px 9px; border-width:2px; top:-16px; }
-  .pcard__ph{ height:104px; } .pcard__price b{ font-size:30px; } .pcard__price i{ font-size:17px; }
+  .pcard__ph{ height:118px; } .pcard__price b{ font-size:30px; } .pcard__price i{ font-size:17px; }
   .pcard__price small{ font-size:12px; top:-14px; } .pcard__cap{ font-size:12.5px; }
   .pcards__note{ font-size:13px; text-align:left; }
 }
