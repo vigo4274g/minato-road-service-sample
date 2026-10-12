@@ -76,6 +76,8 @@ main{ background:var(--paper); }
 .mv__tx h2{ font-size:clamp(30px,3.7vw,54px); line-height:1.35; font-weight:500; letter-spacing:.06em; }
 .mv__tx p.jp{ font-size:clamp(14px,1.75vw,25px); margin-top:14px; letter-spacing:.08em; font-weight:400; }
 .mv__tx p.en{ font-size:clamp(12px,1.2vw,17px); margin-top:12px; font-family:"Times New Roman",serif; letter-spacing:.02em; line-height:1.5; }
+.mv__tx em{ font-style:normal; color:var(--red); -webkit-text-stroke:3.4px #fff; paint-order:stroke fill; }
+.mv__tx p.jp em{ -webkit-text-stroke:1.9px #fff; }
 .mv__arrow{ position:absolute; top:calc(50% - 25px); width:50px; height:50px; cursor:pointer; }
 .mv__arrow::before{ content:""; position:absolute; top:17px; width:14px; height:14px; border-top:2px solid #fff; border-left:2px solid #fff; }
 .mv__arrow.prev{ left:0; } .mv__arrow.prev::before{ left:20px; transform:rotate(-45deg); }
@@ -224,6 +226,8 @@ main{ background:var(--paper); }
   .mv__panel{ width:70%; }
   .mv__tx{ top:14%; }
   .mv__tx h2{ font-size:5.6vw; }
+  .mv__tx em{ -webkit-text-stroke-width:2.2px; }
+  .mv__tx p.jp em{ -webkit-text-stroke-width:1.7px; }
   .mv__tx h2{ font-size:5.6vw; } .mv__tx p.jp{ font-size:clamp(14px,3.4vw,22px); } .mv__tx p.en{ font-size:12px; }
   .mv__img::after{ font-size:11px; bottom:26px; right:8px; }
   .mv__scroll{ display:none; } .mv__arrow{ display:none; }
