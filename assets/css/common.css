@@ -204,12 +204,12 @@ main{ background:var(--paper); }
   .hd.is-stuck .logo__em svg{ width:13px; height:13px; }
   .hd.is-stuck .logo__tx{ font-size:14px; }
   /* スマホのヘッダーにも電話とLINE（下のバーと合わせて、どこを見ていても押せる） */
-  .hd__sp{ display:flex; align-items:center; gap:6px; position:absolute; right:48px; top:50%; transform:translateY(-50%); }
-  .hd__sp a{ width:32px; height:32px; border-radius:50%; display:grid; place-items:center; transition:.2s; }
+  .hd__sp{ display:flex; align-items:center; gap:7px; position:absolute; right:46px; top:50%; transform:translateY(-50%); }
+  .hd__sp a{ width:25px; height:25px; border-radius:50%; display:grid; place-items:center; transition:.2s; }
   .hd__sp a:active{ transform:scale(.92); }
   .hd__sp .t{ background:var(--red); }
   .hd__sp .l{ background:#06c755; }
-  .hd__sp svg{ width:17px; height:17px; fill:#fff; }
+  .hd__sp svg{ width:13px; height:13px; fill:#fff; }
   .hd.open .hd__sp{ display:none; }
   .logo__tx{ max-width:calc(100vw - 176px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .nav{ display:none; }
@@ -229,7 +229,6 @@ main{ background:var(--paper); }
   .hd.open .tel svg{ width:22px; height:22px; }
   .hd.open .tel i{ font-size:11px; }
   .hd.open .hd__line,.hd.open .hd__btn{ display:flex; align-items:center; justify-content:center; font-size:16px; padding:14px; }
-  .hd.open .hd__r .tel:nth-of-type(2){ order:-1; }          /* 緊急ダイヤルを一番上に */
   .hd.open .hd__btn{ background:transparent; border:1px solid rgba(255,255,255,.5); font-weight:700; }
   .hd.open .nav{ display:block; border:0; padding:6px 16px 40px; }
   .hd.open .nav ul{ display:block; padding:0; }
@@ -272,7 +271,7 @@ main{ background:var(--paper); }
   .fixbtn .line{ display:inline-block; background:#06c755; color:#fff; font-size:15px; font-weight:700; padding:10px 18px; white-space:nowrap; }
 }
 @media (max-width:400px){ .logo__tx,.hd.is-stuck .logo__tx{ font-size:12.5px; } }
-@media (max-width:380px){ .logo__tx,.hd.is-stuck .logo__tx{ font-size:12px; letter-spacing:.01em; } .hd__sp a{ width:30px; height:30px; } .hd__sp{ right:46px; gap:5px; } }
+@media (max-width:380px){ .logo__tx,.hd.is-stuck .logo__tx{ font-size:12px; letter-spacing:.01em; } .hd__sp a{ width:23px; height:23px; } .hd__sp{ right:44px; gap:6px; } }
 
 /* ============================================================
    ここから 5ページ構成の追加パーツ
