@@ -65,28 +65,32 @@ main{ background:var(--paper); }
 @media (prefers-reduced-motion: reduce){ .hd,.hd__in,.logo,.logo__em,.logo__tx,.tel,.nav a,.hd__line,.hd__btn{ transition:none; } }
 
 /* ---- メインビジュアル（1440×900 の写真スライド。文字は写真に焼き込みなので再現） ---- */
-.mv{ position:relative; width:100%; height:44vw; max-height:640px; min-height:400px; overflow:hidden; background:#000; }
-.mv__slide{ position:absolute; inset:0; }
-.mv__img{ position:absolute; inset:0; background:linear-gradient(120deg,#2c3540 0%,#5a6b7c 45%,#8fa3b5 100%) center/cover no-repeat; }
-.mv__img[style]::after,.mv__img[style]::before{ display:none; }
-.mv__img::before{ content:""; position:absolute; right:0; top:0; bottom:0; width:58%; background:radial-gradient(ellipse at 70% 60%, rgba(255,255,255,.18), transparent 60%); }
-.mv__img::after{ content:"メイン写真（レッカー車＋広島の風景など・横1920×1200）"; position:absolute; right:24px; bottom:46px; font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.05em; }
-.mv__panel{ position:absolute; left:0; top:0; bottom:0; width:56%; background:rgba(20,24,30,.78); clip-path:polygon(0 0,100% 0,72% 100%,0 100%); }
-.mv__tx{ position:absolute; left:3.5%; top:200px; color:#fff; font-family:"游明朝","Yu Mincho","ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif; text-shadow:0 2px 12px rgba(0,0,0,.4); }
-.mv__tx h2{ font-size:clamp(30px,3.7vw,54px); line-height:1.35; font-weight:500; letter-spacing:.06em; }
-.mv__tx p.jp{ font-size:clamp(14px,1.75vw,25px); margin-top:14px; letter-spacing:.08em; font-weight:400; }
-.mv__tx p.en{ font-size:clamp(12px,1.2vw,17px); margin-top:12px; font-family:"Times New Roman",serif; letter-spacing:.02em; line-height:1.5; }
-.mv__tx em{ font-style:normal; color:#fff; -webkit-text-stroke:3.4px #fff; paint-order:stroke fill; }
-.mv__tx p.jp em{ -webkit-text-stroke:1.9px #fff; }
-.mv__arrow{ position:absolute; top:calc(50% - 25px); width:50px; height:50px; cursor:pointer; }
-.mv__arrow::before{ content:""; position:absolute; top:17px; width:14px; height:14px; border-top:2px solid #fff; border-left:2px solid #fff; }
-.mv__arrow.prev{ left:0; } .mv__arrow.prev::before{ left:20px; transform:rotate(-45deg); }
-.mv__arrow.next{ right:0; } .mv__arrow.next::before{ right:20px; transform:rotate(135deg); }
-.mv__dots{ position:absolute; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:5px; }
-.mv__dots li{ width:40px; height:20px; position:relative; cursor:pointer; }
-.mv__dots li::before{ content:""; position:absolute; left:0; right:0; top:9px; height:2px; background:rgba(180,180,180,.5); }
-.mv__dots li.current{ width:60px; } .mv__dots li.current::before{ background:#fff; }
-.mv__scroll{ position:absolute; left:50%; bottom:40px; transform:translateX(-50%); color:#fff; font-size:12px; letter-spacing:.2em; }
+.mv{ position:relative; width:100%; height:56.25vw; max-height:810px; min-height:560px; overflow:hidden; background:#0b1220; }
+.mv__img{ position:absolute; inset:0; background:#0b1220 center/cover no-repeat; }
+.mv__shade{ position:absolute; inset:0; background:
+  linear-gradient(90deg, rgba(6,12,24,.93) 0%, rgba(6,12,24,.86) 26%, rgba(6,12,24,.55) 50%, rgba(6,12,24,.12) 72%, rgba(6,12,24,0) 88%),
+  linear-gradient(180deg, rgba(6,12,24,.55) 0%, rgba(6,12,24,0) 32%); }
+.mv__in{ position:absolute; left:4.7%; right:4.7%; top:0; bottom:0; padding-top:188px;
+  display:flex; flex-direction:column; justify-content:center; color:#fff; }
+.mv__eye{ font-size:clamp(13px,1.5vw,22px); font-weight:500; letter-spacing:.16em; line-height:1; }
+.mv__eye::after{ content:""; display:block; width:min(347px,24vw); height:1px; background:rgba(255,255,255,.65); margin-top:14px; }
+.mv__h{ font-size:clamp(28px,4.3vw,62px); font-weight:700; line-height:1.3; letter-spacing:.02em; margin-top:clamp(16px,2vw,28px);
+  text-shadow:0 2px 16px rgba(0,0,0,.45); }
+.mv__lead{ font-size:clamp(13px,1.6vw,23px); font-weight:500; line-height:1.75; letter-spacing:.03em; margin-top:clamp(14px,1.9vw,26px); }
+.mv__btns{ display:flex; gap:clamp(10px,1.7vw,28px); margin-top:clamp(18px,2.4vw,34px); flex-wrap:wrap; }
+.mvb{ display:inline-flex; align-items:center; gap:clamp(10px,1.1vw,16px); border-radius:10px; color:#fff;
+  padding:clamp(12px,1.25vw,18px) clamp(16px,1.8vw,26px); font-weight:700; font-size:clamp(14px,1.45vw,21px); letter-spacing:.03em;
+  box-shadow:0 6px 18px rgba(0,0,0,.28); transition:.2s; }
+.mvb:hover{ transform:translateY(-2px); opacity:.94; }
+.mvb--tel{ background:var(--red); }
+.mvb--line{ background:#06c755; }
+.mvb__ic{ display:inline-flex; align-items:center; padding-right:clamp(10px,1.1vw,16px); border-right:1px solid rgba(255,255,255,.5); }
+.mvb__ic svg{ width:clamp(20px,1.7vw,26px); height:clamp(20px,1.7vw,26px); fill:#fff; }
+.mvb__ic--line svg{ fill:#06c755; background:#fff; border-radius:6px; padding:3px; box-sizing:content-box; }
+.mvb__ar{ font-size:clamp(15px,1.4vw,20px); font-weight:400; opacity:.9; margin-left:2px; }
+.mv__note{ display:flex; align-items:center; gap:14px; margin-top:clamp(16px,2vw,28px); font-size:clamp(11.5px,1.25vw,18px); letter-spacing:.04em; color:rgba(255,255,255,.95); }
+.mv__note::before,.mv__note::after{ content:""; height:1px; background:rgba(255,255,255,.55); flex:0 0 auto; width:clamp(26px,4vw,62px); }
+.mv__note span{ flex:0 1 auto; }
 
 /* ---- 見出し（濃グレーのベタ帯＋赤の下線・PC36px/SP26px） ---- */
 .ttl{ padding:44px 0 36px; }
@@ -176,6 +180,17 @@ main{ background:var(--paper); }
 
 /* ===== スマホ（実測：ヘッダー45px・ロゴ166×19・写真351幅・セクション余白50px） ===== */
 @media (max-width:960px){
+  .mv{ height:auto; max-height:none; min-height:0; }
+  .mv__in{ position:relative; left:0; right:0; padding:62px 18px 30px; }
+  .mv__img,.mv__shade{ position:absolute; }
+  .mv__shade{ background:linear-gradient(180deg, rgba(6,12,24,.80) 0%, rgba(6,12,24,.62) 45%, rgba(6,12,24,.82) 100%); }
+  .mv__eye{ font-size:13px; } .mv__eye::after{ width:180px; margin-top:10px; }
+  .mv__h{ font-size:clamp(25px,7.2vw,34px); margin-top:14px; }
+  .mv__lead{ font-size:clamp(12.5px,3.5vw,16px); margin-top:14px; }
+  .mv__btns{ gap:10px; margin-top:18px; }
+  .mvb{ flex:1 1 100%; justify-content:center; font-size:16px; padding:14px 16px; }
+  .mv__note{ margin-top:16px; font-size:11.5px; gap:8px; }
+  .mv__note::before,.mv__note::after{ width:18px; }
   .hd__seo,.hd__map{ display:none; }
   .hd__in{ padding:13px 15px; height:45px; }
   .logo{ height:19px; gap:6px; }
@@ -222,16 +237,6 @@ main{ background:var(--paper); }
   .hd.open .nav a{ text-align:left; padding:16px 4px; line-height:1.7; border-bottom:1px solid rgba(255,255,255,.18); }
   .hd.open .nav li.current a::before{ display:none; }
 
-  .mv{ height:62.5vw; max-height:none; min-height:0; }
-  .mv__panel{ width:70%; }
-  .mv__tx{ top:14%; }
-  .mv__tx h2{ font-size:5.6vw; }
-  .mv__tx em{ -webkit-text-stroke-width:2.2px; }
-  .mv__tx p.jp em{ -webkit-text-stroke-width:1.7px; }
-  .mv__tx h2{ font-size:5.6vw; } .mv__tx p.jp{ font-size:clamp(14px,3.4vw,22px); } .mv__tx p.en{ font-size:12px; }
-  .mv__img::after{ font-size:11px; bottom:26px; right:8px; }
-  .mv__scroll{ display:none; } .mv__arrow{ display:none; }
-  .mv__dots{ bottom:0; }
 
   .wrap{ padding:0 20px; }
   .ttl{ padding:50px 0; } .ttl--tight{ padding:50px 0 30px; }
@@ -266,7 +271,7 @@ main{ background:var(--paper); }
   .fixbtn .tel{ font-size:21px; gap:6px; } .fixbtn .tel svg{ width:15px; height:15px; margin-top:2px; } .fixbtn .tel i{ font-size:11.5px; text-align:left; }
   .fixbtn .line{ display:inline-block; background:#06c755; color:#fff; font-size:15px; font-weight:700; padding:10px 18px; white-space:nowrap; }
 }
-@media (max-width:400px){ .mv__tx h2{ font-size:6vw; } .logo__tx,.hd.is-stuck .logo__tx{ font-size:12.5px; } }
+@media (max-width:400px){ .logo__tx,.hd.is-stuck .logo__tx{ font-size:12.5px; } }
 @media (max-width:380px){ .logo__tx,.hd.is-stuck .logo__tx{ font-size:12px; letter-spacing:.01em; } .hd__sp a{ width:30px; height:30px; } .hd__sp{ right:46px; gap:5px; } }
 
 /* ============================================================
