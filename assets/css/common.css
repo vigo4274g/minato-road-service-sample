@@ -57,7 +57,7 @@ main{ background:var(--paper); }
 .hd.is-stuck .logo__tx small{ font-size:8px; margin-top:3px; }
 .hd.is-stuck .tel{ font-size:21px; }
 .hd.is-stuck .tel svg{ width:18px; height:18px; }
-.hd.is-stuck .tel i{ font-size:10px; padding-top:1px; }
+.hd.is-stuck .tel i{ font-size:11.5px; padding-top:1px; }
 .hd.is-stuck .hd__line,.hd.is-stuck .hd__btn{ padding:8px 15px; font-size:13px; }
 .hd.is-stuck .nav a{ line-height:44px; font-size:15px; }
 .hd.is-stuck .nav li+li::before{ top:12px; height:18px; }
