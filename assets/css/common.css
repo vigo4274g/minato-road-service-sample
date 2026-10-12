@@ -541,9 +541,9 @@ main{ background:var(--paper); }
 }
 
 /* トップの料金＝要点だけ（詳細はロードサービスページ） */
-/* ---- 強み（POINT 01〜04・写真つき4列） ---- */
+/* ---- 強み（POINT 01〜03・写真つき3列） ---- */
 .pts{ display:flex; gap:24px; align-items:stretch; }
-.pt{ width:25%; background:#fff; border:1px solid #e0e0e0; border-top:4px solid var(--red); display:flex; flex-direction:column; }
+.pt{ width:33.333%; background:#fff; border:1px solid #e0e0e0; border-top:4px solid var(--red); display:flex; flex-direction:column; }
 .pt--sub{ border-top-color:#6e6e6e; }
 .pt__ph{ height:180px; flex:none; position:relative; overflow:hidden; box-shadow:inset 0 0 0 2000px rgba(0,0,0,.62); }
 .pt__hd{ position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 12px; color:#fff; }
@@ -565,12 +565,12 @@ main{ background:var(--paper); }
   .pt__ph{ height:150px; } .pt__ti{ font-size:19px; } .pt__tx{ font-size:14.5px; } .pt__list li{ font-size:13px; }
 }
 @media (max-width:900px){
-  .pts{ flex-wrap:wrap; gap:20px; } .pt{ width:calc(50% - 10px); }
-  .pt__ph{ height:180px; } .pt__ti{ font-size:22px; } .pt__tx{ font-size:15.5px; } .pt__list li{ font-size:14px; }
+  .pts{ flex-wrap:wrap; gap:16px; }
+  .pt__ph{ height:155px; } .pt__ti{ font-size:18px; } .pt__tx{ font-size:14px; } .pt__list li{ font-size:12.5px; }
 }
-@media (max-width:600px){
+@media (max-width:700px){
   .pts{ display:block; } .pt{ width:100%; } .pt+.pt{ margin-top:18px; }
-  .pt__ph{ height:0; padding-top:50%; }
+  .pt__ph{ height:0; padding-top:50%; } .pt__ti{ font-size:21px; } .pt__tx{ font-size:15.5px; } .pt__list li{ font-size:14px; }
 }
 
 /* ---- 料金カード（C案：写真を暗くして中央に白文字） ---- */
@@ -609,11 +609,13 @@ main{ background:var(--paper); }
 .fee2__row p{ font-size:16.5px; line-height:1.95; color:#333; }
 .fee2__price{ font-size:34px; font-weight:700; color:var(--red); line-height:1.2; letter-spacing:.01em; }
 .fee2__unit{ font-size:15px; color:#444; margin-left:8px; }
+.fee2__lb{ font-size:17px; font-weight:700; color:#333; margin-right:12px; }
 .fee2__note{ margin-top:18px; font-size:15px; line-height:1.9; color:#333; border-left:3px solid var(--red); padding:12px 16px; background:#fff; }
 @media (max-width:960px){
   .fee2__row{ display:block; padding:18px; }
   .fee2__tag{ display:inline-block; width:auto; padding:6px 14px; margin-bottom:10px; }
   .fee2__price{ font-size:30px; display:block; }
+  .fee2__lb{ display:block; font-size:15.5px; margin:0 0 2px; }
   .fee2__unit{ margin-left:0; display:block; }
 }
 
