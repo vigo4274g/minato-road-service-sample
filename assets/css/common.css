@@ -568,9 +568,18 @@ main{ background:var(--paper); }
   .pts{ flex-wrap:wrap; gap:16px; }
   .pt__ph{ height:155px; } .pt__ti{ font-size:18px; } .pt__tx{ font-size:14px; } .pt__list li{ font-size:12.5px; }
 }
-@media (max-width:700px){
-  .pts{ display:block; } .pt{ width:100%; } .pt+.pt{ margin-top:18px; }
-  .pt__ph{ height:0; padding-top:50%; } .pt__ti{ font-size:21px; } .pt__tx{ font-size:15.5px; } .pt__list li{ font-size:14px; }
+@media (max-width:760px){
+  .pts{ display:flex; flex-wrap:nowrap; gap:9px; }
+  .pt{ width:calc(33.333% - 6px); border-top-width:3px; }
+  .pt__ph{ height:0; padding-top:66%; }
+  .pt__hd{ padding:0 5px; }
+  .pt__no{ font-size:9px; letter-spacing:.06em; padding:4px 7px; }
+  .pt__ti{ font-size:12.5px; margin-top:7px; line-height:1.35; }
+  .pt__bd{ padding:11px 9px 12px; }
+  .pt__tx{ font-size:11.5px; line-height:1.75; }
+  .pt__list{ margin-top:10px; padding-top:9px; }
+  .pt__list li{ font-size:10.5px; line-height:1.6; padding-left:13px; margin-bottom:5px; }
+  .pt__list li::before{ width:8px; height:4px; top:5px; border-width:0 0 1.5px 1.5px; }
 }
 
 /* ---- 料金カード（C案：写真を暗くして中央に白文字） ---- */
