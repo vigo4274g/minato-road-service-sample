@@ -656,21 +656,21 @@ main{ background:var(--paper); }
 .pcard__price b{ font-size:52px; letter-spacing:-.01em; }
 .pcard__price small{ position:absolute; left:0; top:-15px; font-size:12px; white-space:nowrap; }
 .pcard__price i{ position:relative; font-style:normal; font-size:27px; margin-left:4px; }
-.pcard__price--etc{ font-size:40px; font-weight:700; letter-spacing:.02em; }
+.pcard__cap--only{ font-size:17px !important; font-weight:700; margin-top:16px !important; }
 .pcard__cap{ font-size:14px; line-height:1.7; margin-top:12px; color:rgba(255,255,255,.92); }
 .pcards__note{ font-size:14.5px; color:#555; line-height:1.9; margin-top:26px; text-align:center; }
 @media (max-width:860px){
   .pcards{ gap:16px; flex-wrap:wrap; } .pcard{ width:calc(50% - 8px); height:250px; }
   .pcard__pill{ font-size:13px; padding:6px 13px; }
-  .pcard__price b{ font-size:38px; } .pcard__price i{ font-size:21px; } .pcard__price--etc{ font-size:32px; }
-  .pcard__cap{ font-size:13px; }
+  .pcard__price b{ font-size:38px; } .pcard__price i{ font-size:21px; }
+  .pcard__cap{ font-size:13px; } .pcard__cap--only{ font-size:15px !important; }
 }
 @media (max-width:560px){
   .pcards{ gap:12px; flex-wrap:wrap; } .pcard{ width:calc(50% - 6px); height:215px; }
   .pcard__pill{ font-size:11.5px; padding:5px 10px; }
-  .pcard__price b{ font-size:32px; } .pcard__price i{ font-size:18px; } .pcard__price--etc{ font-size:27px; }
+  .pcard__price b{ font-size:32px; } .pcard__price i{ font-size:18px; }
   .pcard__price small{ font-size:12px; top:-14px; }
-  .pcard__cap{ font-size:11.5px; margin-top:8px; }
+  .pcard__cap{ font-size:11.5px; margin-top:8px; } .pcard__cap--only{ font-size:13px !important; margin-top:12px !important; }
   .pcards__note{ font-size:13px; text-align:left; }
 }
 
