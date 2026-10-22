@@ -94,7 +94,13 @@ main{ background:var(--paper); }
 
 /* ---- 見出し（濃グレーのベタ帯＋赤の下線・PC36px/SP26px） ---- */
 .ttl{ padding:44px 0 36px; }
-.ttl__box{ background:var(--dark2); border-bottom:5px solid var(--red); padding:18px 20px; text-align:center; }
+.ttl__box{ position:relative; overflow:hidden; background:var(--dark2); padding:18px 20px 21px; text-align:center; }
+.ttl__box::after{ content:""; position:absolute; left:0; bottom:0; width:100%; height:5px; background:var(--red); transform-origin:left center; }
+.ttl__box small{ display:block; font-family:Oswald,"Helvetica Neue",sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.3em; color:rgba(255,255,255,.55); margin-top:8px; line-height:1; }
+.anim .ttl[data-rv] .ttl__box::after{ transform:scaleX(0); }
+.ttl.is-in .ttl__box::after{ animation:ttlBar .75s cubic-bezier(.22,.7,.3,1) .12s both; }
+.ttl.rv-now .ttl__box::after{ transform:none; }
+@keyframes ttlBar{ from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
 .ttl__box span{ display:block; color:#fff; font-size:36px; font-weight:700; line-height:1.45; letter-spacing:.03em; }
 .ttl--tight{ padding:44px 0 26px; }
 
@@ -242,7 +248,7 @@ main{ background:var(--paper); }
 
   .wrap{ padding:0 20px; }
   .ttl{ padding:50px 0; } .ttl--tight{ padding:50px 0 30px; }
-  .ttl__box{ padding:14px 14px; border-bottom-width:4px; } .ttl__box span{ font-size:26px; line-height:1.4; }
+  .ttl__box{ padding:14px 14px 16px; } .ttl__box::after{ height:4px; } .ttl__box span{ font-size:26px; line-height:1.4; } .ttl__box small{ font-size:11px; letter-spacing:.24em; margin-top:6px; }
   .imgtxt{ padding:0 0 50px; } .imgtxt--r{ padding:50px 0; }
   .imgtxt__in,.imgtxt--r .imgtxt__in{ flex-direction:column; }
   .imgtxt__ph{ width:100%; padding:0 20px; }
@@ -436,6 +442,10 @@ main{ background:var(--paper); }
 .flow p{ padding:0 20px; }
 .flow li::after{ content:""; position:absolute; right:-14px; top:calc(50% - 6px); z-index:1; width:8px; height:8px; border-top:2px solid var(--red); border-right:2px solid var(--red); transform:rotate(45deg); }
 .flow li:last-child::after{ display:none; }
+.anim .flow>li[data-rv]::after{ opacity:0; }
+.flow>li.is-in::after{ animation:flowArr .45s ease both; animation-delay:calc(var(--ri,0)*.07s + .42s); }
+.flow>li.rv-now::after{ opacity:1; }
+@keyframes flowArr{ from{ opacity:0; transform:rotate(45deg) translate(-5px,-5px) } to{ opacity:1; transform:rotate(45deg) translate(0,0) } }
 .flow b{ display:block; font-size:13px; letter-spacing:.18em; color:var(--red); margin-bottom:10px; }
 .flow h3{ font-size:19px; font-weight:700; margin-bottom:8px; line-height:1.6; }
 .flow p{ font-size:15.5px; line-height:1.85; color:#555; }
@@ -675,13 +685,14 @@ main{ background:var(--paper); }
 /* ---- 料金の3分岐（3列カード） ---- */
 .fee3{ display:flex; gap:24px; margin-top:34px; align-items:stretch; }
 .fee3__i{ width:33.333%; background:#fff; border:1px solid #e0e0e0; display:flex; flex-direction:column; }
-.fee3__tag{ color:#fff; font-size:14.5px; font-weight:700; text-align:center; padding:11px 8px; letter-spacing:.04em; }
+.fee3__tag{ display:flex; align-items:center; justify-content:center; gap:9px; color:#fff; font-size:14.5px; font-weight:700; padding:10px 8px; letter-spacing:.04em; }
+.fee3__tag .fi{ width:21px; height:21px; flex:none; }
 .fee3__i--a .fee3__tag{ background:#06c755; }
 .fee3__i--b .fee3__tag{ background:var(--dark); }
 .fee3__i--c .fee3__tag{ background:#6e6e6e; }
 .fee3__bd{ padding:22px 22px 24px; text-align:center; }
-.fee3__hd{ font-size:21px; white-space:nowrap; font-weight:700; color:var(--red); line-height:1.3; letter-spacing:.01em; }
-.fee3__hd b{ font-size:40px; letter-spacing:-.01em; }
+.fee3__hd{ font-size:21px; white-space:nowrap; margin-top:2px; font-weight:700; color:var(--red); line-height:1.3; letter-spacing:.01em; }
+.fee3__hd b{ font-size:46px; letter-spacing:-.01em; }
 .fee3__hd small{ font-size:12.5px; margin-left:2px; }
 .fee3__ex{ font-weight:700; color:var(--red); }
 .fee3__tx{ font-size:14.5px; line-height:1.9; color:#444; margin-top:12px; text-align:left; }
@@ -689,7 +700,7 @@ main{ background:var(--paper); }
 @media (max-width:860px){
   .fee3{ display:block; } .fee3__i{ width:100%; } .fee3__i+.fee3__i{ margin-top:14px; }
   .fee3__bd{ padding:18px 18px 20px; display:flex; align-items:baseline; gap:14px; text-align:left; flex-wrap:wrap; }
-  .fee3__hd{ font-size:21px; } .fee3__hd b{ font-size:32px; }
+  .fee3__hd{ font-size:21px; } .fee3__hd b{ font-size:36px; }
   .fee3__tx{ margin-top:0; font-size:14px; flex:1 1 100%; }
   .fee3__note{ font-size:13.5px; }
 }
