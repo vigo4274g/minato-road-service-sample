@@ -627,7 +627,9 @@ main{ background:var(--paper); }
 .sec--bgl{ position:relative; background:#fff url(../img/bg_garage.jpg) center/cover no-repeat; }
 .sec--bgl::before{ content:""; position:absolute; inset:0; background:rgba(255,255,255,.88); }
 .sec--bgl>.wrap{ position:relative; z-index:1; }
-.sec--paper{ background:var(--paper); }
+.sec--paper{ position:relative; background:var(--paper) url(../img/bg_call.jpg) center 38%/cover no-repeat; }
+.sec--paper::before{ content:""; position:absolute; inset:0; background:rgba(248,248,247,.90); }
+.sec--paper>.wrap{ position:relative; z-index:1; }
 
 /* ---- 強み（POINT 01〜03・写真つき3列） ---- */
 .pts{ display:flex; gap:24px; align-items:stretch; }
