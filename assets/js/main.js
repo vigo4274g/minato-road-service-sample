@@ -19,7 +19,7 @@
     if(m){ m.hidden=false; m.textContent='これはサンプルです。送信先が決まり次第、実際に届く形に設定します。'; } }); }
 
   // ---- 画面に入ったらふわっと出す（JSが動かないときは最初から表示される）----
-  var SEL='.ttl,.cars,.cta,.lendsec,.area,.trb__ph,.rep,.cards__in,'+
+  var SEL='.ttl,.cars,.cta,.lendsec,.area,.trb__ph,.rep2,.rep2__list>li,.cards__in,'+
           '.pcards>li,.pts>li,.fee3>li,.flow>li,.tlist--grid>li,.area__map';
   var list=Array.prototype.slice.call(document.querySelectorAll(SEL));
   if(list.length){

@@ -586,6 +586,30 @@ main{ background:var(--paper); }
 }
 
 /* トップの料金＝要点だけ（詳細はロードサービスページ） */
+/* ---- 何度もご依頼いただく方へ ---- */
+.sec--rep{ position:relative; background:#fff url(../img/bg_rep.jpg) center 35%/cover no-repeat; }
+.sec--rep::before{ content:""; position:absolute; inset:0; background:rgba(255,255,255,.90); }
+.sec--rep>.wrap{ position:relative; z-index:1; }
+.rep2{ text-align:center; }
+.rep2__h{ font-size:28px; font-weight:700; line-height:1.4; letter-spacing:.02em; }
+.rep2__lead{ font-size:17px; line-height:1.8; color:#333; margin-top:10px; }
+.rep2__lead strong{ font-weight:700; }
+.rep2__list{ display:flex; gap:20px; margin-top:28px; }
+.rep2__list li{ width:25%; background:#fff; border:1px solid #e0e0e0; border-top:3px solid var(--red); padding:22px 14px 20px; }
+.rep2__ic{ display:grid; place-items:center; width:52px; height:52px; margin:0 auto 12px; border-radius:50%; background:#fdecec; color:var(--red); }
+.rep2__ic .ri{ width:27px; height:27px; }
+.rep2__list b{ display:block; font-size:17px; font-weight:700; line-height:1.5; }
+.rep2__list i{ display:block; font-style:normal; font-size:13.5px; line-height:1.7; color:#555; margin-top:7px; }
+.rep2__note{ font-size:13.5px; color:#666; margin-top:22px; }
+@media (max-width:860px){
+  .rep2__h{ font-size:22px; } .rep2__lead{ font-size:15px; }
+  .rep2__list{ flex-wrap:wrap; gap:12px; margin-top:22px; }
+  .rep2__list li{ width:calc(50% - 6px); padding:18px 10px 16px; }
+  .rep2__ic{ width:44px; height:44px; margin-bottom:10px; } .rep2__ic .ri{ width:23px; height:23px; }
+  .rep2__list b{ font-size:15px; } .rep2__list i{ font-size:12.5px; }
+  .rep2__note{ font-size:12.5px; }
+}
+
 /* ---- 代車の軽バン（支給デザイン再現） ---- */
 .lendsec{ position:relative; background:#fff; overflow:hidden; padding:56px 0 60px; }
 .lendsec__bg{ position:absolute; top:0; right:0; bottom:0; width:64%; background-size:cover; background-position:center 30%; }
