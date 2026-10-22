@@ -694,11 +694,13 @@ main{ background:var(--paper); }
 
 /* 凝縮版：対応トラブルの一覧 */
 .tlist--grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; justify-content:initial; }
-.tlist--grid li{ text-align:center; padding:14px 8px; font-size:16px; background:#fff; border:1px solid #ddd; line-height:1.5; }
+.tlist--grid li{ display:flex; align-items:center; gap:12px; text-align:left; padding:12px 14px; font-size:16px; background:#fff; border:1px solid #ddd; line-height:1.5; }
+.tlist--grid .ti{ width:28px; height:28px; flex:none; color:var(--red); }
 /* 凝縮版：選ばれる理由3つ（写真なし） */
 @media (max-width:960px){
   .tlist--grid{ grid-template-columns:repeat(2,1fr); gap:8px; }
-  .tlist--grid li{ font-size:14px; padding:12px 6px; }
+  .tlist--grid li{ font-size:13.5px; padding:11px 10px; gap:9px; }
+  .tlist--grid .ti{ width:23px; height:23px; }
 }
 
 /* 対応できる車両（並び順で誰向けかを伝える） */
