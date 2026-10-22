@@ -391,6 +391,16 @@ main{ background:var(--paper); }
 }
 @media (max-width:560px){ .trb__ph{ height:210px; } .trb__tx p{ font-size:15.5px; } .trb__sub{ font-size:12.5px !important; } }
 
+/* ---- スクロールでふわっと出す ---- */
+.anim [data-rv]{ opacity:0; }
+[data-rv].is-in{ animation:rvUp .55s cubic-bezier(.22,.7,.3,1) both; animation-delay:calc(var(--ri,0)*.07s); }
+[data-rv].rv-now{ opacity:1; animation:none; }
+@keyframes rvUp{ from{ opacity:0; transform:translateY(18px) } to{ opacity:1; transform:none } }
+@media (prefers-reduced-motion: reduce){
+  .anim [data-rv]{ opacity:1; }
+  [data-rv].is-in{ animation:none; }
+}
+
 /* ---- 対応エリアの地図（スクロールで点灯） ---- */
 .areamap{ width:100%; height:auto; display:block; }
 .areamap .sea{ fill:#e7eef5; }
@@ -405,15 +415,15 @@ main{ background:var(--paper); }
 .anim .areamap .pin .dt{ transform:scale(0); }
 .anim .areamap .pin .rp{ opacity:0; }
 .anim .areamap .pin .lb{ opacity:0; }
-.area__map.is-in .areamap .pin .dt{ animation:mapPop .5s cubic-bezier(.2,1.5,.4,1) both; animation-delay:calc(var(--i)*.1s); }
-.area__map.is-in .areamap .pin .lb{ animation:mapFade .45s ease both; animation-delay:calc(var(--i)*.1s + .14s); }
-.area__map.is-in .areamap .pin .rp{ animation:mapRipple 1.5s ease-out both; animation-delay:calc(var(--i)*.1s + .18s); }
+.area__map.is-in .areamap .pin .dt,.area__map.rv-now .areamap .pin .dt{ animation:mapPop .5s cubic-bezier(.2,1.5,.4,1) both; animation-delay:calc(var(--i)*.1s); }
+.area__map.is-in .areamap .pin .lb,.area__map.rv-now .areamap .pin .lb{ animation:mapFade .45s ease both; animation-delay:calc(var(--i)*.1s + .14s); }
+.area__map.is-in .areamap .pin .rp,.area__map.rv-now .areamap .pin .rp{ animation:mapRipple 1.5s ease-out both; animation-delay:calc(var(--i)*.1s + .18s); }
 @keyframes mapPop{ from{ transform:scale(0) } to{ transform:scale(1) } }
 @keyframes mapFade{ from{ opacity:0 } to{ opacity:1 } }
 @keyframes mapRipple{ 0%{ transform:scale(1); opacity:.35 } 100%{ transform:scale(3.4); opacity:0 } }
 @media (prefers-reduced-motion: reduce){
   .anim .areamap .pin .dt{ transform:none; } .anim .areamap .pin .rp{ opacity:.28; } .anim .areamap .pin .lb{ opacity:1; }
-  .area__map.is-in .areamap .pin .dt,.area__map.is-in .areamap .pin .lb,.area__map.is-in .areamap .pin .rp{ animation:none; }
+  .area__map.is-in .areamap .pin .dt,.area__map.is-in .areamap .pin .lb,.area__map.is-in .areamap .pin .rp,.area__map.rv-now .areamap .pin .rp{ animation:none; }
 }
 
 /* ---- ご依頼の流れ ---- */

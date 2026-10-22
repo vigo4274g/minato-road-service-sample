@@ -18,17 +18,31 @@
     var m=document.getElementById('formMsg');
     if(m){ m.hidden=false; m.textContent='これはサンプルです。送信先が決まり次第、実際に届く形に設定します。'; } }); }
 
-  // 画面に入ったら動かす（JSが動かないときは最初から表示される）
-  var tgt=document.querySelectorAll('.js-inview');
-  if(tgt.length){
+  // ---- 画面に入ったらふわっと出す（JSが動かないときは最初から表示される）----
+  var SEL='.ttl,.cars,.cta,.lendsec,.area,.trb__ph,.rep,.cards__in,'+
+          '.pcards>li,.pts>li,.fee3>li,.flow>li,.tlist--grid>li,.area__map';
+  var list=Array.prototype.slice.call(document.querySelectorAll(SEL));
+  if(list.length){
     document.documentElement.classList.add('anim');
+    list.forEach(function(el){
+      el.setAttribute('data-rv','');
+      var sib=el.parentNode?Array.prototype.indexOf.call(el.parentNode.children,el):0;
+      el.style.setProperty('--ri', sib>7?7:sib);
+    });
+    var vh=window.innerHeight||800;
+    var rest=[];
+    list.forEach(function(el){
+      // 最初から画面に入っているもの（FV直下など）は動かさずに出す＝電話番号を待たせない
+      if(el.getBoundingClientRect().top < vh-40){ el.classList.add('rv-now'); }
+      else { rest.push(el); }
+    });
     if('IntersectionObserver' in window){
       var io2=new IntersectionObserver(function(es){
         es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io2.unobserve(e.target); } });
-      },{threshold:.3});
-      Array.prototype.forEach.call(tgt,function(el){ io2.observe(el); });
+      },{threshold:.15, rootMargin:'0px 0px -8% 0px'});
+      rest.forEach(function(el){ io2.observe(el); });
     } else {
-      Array.prototype.forEach.call(tgt,function(el){ el.classList.add('is-in'); });
+      rest.forEach(function(el){ el.classList.add('rv-now'); });
     }
   }
 })();
