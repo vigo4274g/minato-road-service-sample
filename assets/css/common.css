@@ -607,6 +607,18 @@ main{ background:var(--paper); }
 }
 @media (max-width:420px){ .lend2__h{ font-size:25px; } .lend2__list p{ font-size:13.5px; } }
 
+/* ---- 背景に写真を敷くセクション ---- */
+.cta{ position:relative; background:#0b1220 url(../img/bg_night.jpg) center 32%/cover no-repeat; }
+.cta::before{ content:""; position:absolute; inset:0; background:rgba(8,12,20,.76); }
+.cta__wrap{ position:relative; z-index:1; }
+.sec--bg{ position:relative; background:#2a2e33 url(../img/bg_garage.jpg) center/cover no-repeat; }
+.sec--bg::before{ content:""; position:absolute; inset:0; background:rgba(18,22,28,.85); }
+.sec--bg>.wrap{ position:relative; z-index:1; }
+.sec--bgl{ position:relative; background:#fff url(../img/bg_garage.jpg) center/cover no-repeat; }
+.sec--bgl::before{ content:""; position:absolute; inset:0; background:rgba(255,255,255,.88); }
+.sec--bgl>.wrap{ position:relative; z-index:1; }
+.sec--paper{ background:var(--paper); }
+
 /* ---- 強み（POINT 01〜03・写真つき3列） ---- */
 .pts{ display:flex; gap:24px; align-items:stretch; }
 .pt{ width:33.333%; background:#fff; border:1px solid #e0e0e0; border-top:4px solid var(--red); display:flex; flex-direction:column; }
