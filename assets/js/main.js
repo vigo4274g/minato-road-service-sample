@@ -17,4 +17,18 @@
   if(f){ f.addEventListener('submit',function(e){ e.preventDefault();
     var m=document.getElementById('formMsg');
     if(m){ m.hidden=false; m.textContent='これはサンプルです。送信先が決まり次第、実際に届く形に設定します。'; } }); }
+
+  // 画面に入ったら動かす（JSが動かないときは最初から表示される）
+  var tgt=document.querySelectorAll('.js-inview');
+  if(tgt.length){
+    document.documentElement.classList.add('anim');
+    if('IntersectionObserver' in window){
+      var io2=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io2.unobserve(e.target); } });
+      },{threshold:.3});
+      Array.prototype.forEach.call(tgt,function(el){ io2.observe(el); });
+    } else {
+      Array.prototype.forEach.call(tgt,function(el){ el.classList.add('is-in'); });
+    }
+  }
 })();
